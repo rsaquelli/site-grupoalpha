@@ -2,26 +2,19 @@ import Image from "next/image";
 import { site } from "@/lib/site";
 
 const numeros = [
-  { valor: "+300 mil", rotulo: "refeições por mês" },
-  { valor: "+600 mil", rotulo: "cafés da manhã por mês" },
+  { valor: "+300 mil", rotulo: "refeições mensais" },
+  { valor: "+600 mil", rotulo: "cafés da manhã mensais" },
   { valor: "+180", rotulo: "colaboradores" },
   { valor: "+60", rotulo: "unidades alocadas" },
 ];
 
 const solucoes = [
-  ["Refeição Local", "Operação completa dentro da empresa, com cozinha montada e produção no próprio cliente."],
-  ["Refeição Transportada", "Produção centralizada, controle de qualidade e logística até a operação."],
-  ["Marmitex", "Refeições individuais produzidas, montadas e entregues com padrão e praticidade."],
-  ["Café da Manhã e Lanches", "Soluções flexíveis para diferentes jornadas e perfis de equipe."],
-  ["Almoço e Jantar", "Cardápios completos, equilibrados e adaptados à realidade de cada contrato."],
-  ["Eventos Corporativos", "Ações especiais, datas comemorativas e experiências para colaboradores."],
-];
-
-const pilares = [
-  ["24×7", "Operação preparada para jornadas contínuas."],
-  ["Nutrição", "Equipe técnica especializada no acompanhamento da operação."],
-  ["Qualidade", "Controle do recebimento ao serviço final."],
-  ["Flexibilidade", "Modelos e cardápios sob medida para cada cliente."],
+  ["01", "Refeição Local", "Operação dentro da empresa, com produção no próprio cliente e acompanhamento técnico."],
+  ["02", "Refeição Transportada", "Produção centralizada, padrão de qualidade e logística até a operação."],
+  ["03", "Marmitex", "Refeições individuais produzidas, montadas e entregues com praticidade."],
+  ["04", "Café da Manhã", "Soluções flexíveis para diferentes jornadas, turnos e perfis de equipe."],
+  ["05", "Almoço e Jantar", "Cardápios completos e adaptados à realidade de cada contrato."],
+  ["06", "Eventos Corporativos", "Ações especiais para criar experiências e valorizar colaboradores."],
 ];
 
 export default function Home() {
@@ -29,13 +22,7 @@ export default function Home() {
     <main>
       <header className="topbar">
         <a href="#inicio" className="brand" aria-label="Grupo Alpha Refeições">
-          <Image
-            src="/logo-alpha.png"
-            alt="Grupo Alpha Refeições"
-            width={86}
-            height={86}
-            priority
-          />
+          <Image src="/logo-alpha.png" alt="Grupo Alpha Refeições" width={118} height={118} priority />
         </a>
 
         <nav className="nav">
@@ -43,56 +30,55 @@ export default function Home() {
           <a href="#solucoes">Soluções</a>
           <a href="#qualidade">Qualidade</a>
           <a href="#estrutura">Estrutura</a>
+          <a href="#experiencias">Experiências</a>
           <a href="#contato">Contato</a>
         </nav>
 
-        <a className="portalBtn" href={site.portalColaborador}>
-          Portal do Colaborador
-        </a>
+        <a className="portalBtn" href={site.portalColaborador}>Portal do Colaborador</a>
       </header>
 
-      <section id="inicio" className="hero">
-        <div className="heroTexture" />
-        <div className="heroCopy">
-          <span className="eyebrow light">GRUPO ALPHA REFEIÇÕES</span>
-          <h1>
-            Alimentação corporativa com
-            <span> sabor de comida de verdade.</span>
-          </h1>
-          <p>
-            Soluções completas para empresas que precisam unir qualidade,
-            segurança alimentar, escala e uma experiência melhor para seus colaboradores.
-          </p>
-
-          <div className="heroActions">
-            <a className="button buttonWhite" href="#contato">
-              Solicite uma proposta
-            </a>
-            <a className="button buttonGhost" href="#solucoes">
-              Conheça nossas soluções
-            </a>
-          </div>
-
-          <div className="heroSeal">
-            <strong>37 anos</strong>
-            <span>de experiência e tradição</span>
+      <section id="inicio" className="heroPremium">
+        <div className="heroPhoto">
+          <Image
+            src="/images/hero-alpha.webp"
+            alt="Buffet e alimentação corporativa Grupo Alpha"
+            fill
+            sizes="(max-width: 900px) 100vw, 52vw"
+            priority
+          />
+          <div className="heroPhotoShade" />
+          <div className="photoCaption">
+            <span>OPERAÇÃO REAL</span>
+            <strong>Comida de verdade, todos os dias.</strong>
           </div>
         </div>
 
-        <div className="heroArt">
-          <div className="logoCard">
-            <Image
-              src="/logo-alpha.png"
-              alt="Logo Grupo Alpha Refeições"
-              width={440}
-              height={440}
-              priority
-            />
+        <div className="heroPanel">
+          <div className="heroBrandLine">
+            <span className="eyebrow light">37 ANOS DE EXPERIÊNCIA</span>
+            <span className="heroDot" />
+            <span>Barueri • São Paulo</span>
           </div>
-          <div className="accentCard">
-            <span>OPERAÇÃO</span>
-            <strong>24 × 7</strong>
-            <small>estrutura preparada para diferentes turnos e volumes</small>
+
+          <h1>
+            Alimentação corporativa
+            <span>com sabor, escala e cuidado.</span>
+          </h1>
+
+          <p>
+            Soluções completas para empresas que buscam qualidade, segurança
+            alimentar e uma experiência melhor para seus colaboradores.
+          </p>
+
+          <div className="heroActions">
+            <a className="button buttonWhite" href="#contato">Solicite uma proposta</a>
+            <a className="button buttonOutline" href="#solucoes">Conheça as soluções</a>
+          </div>
+
+          <div className="heroProof">
+            <div><strong>24×7</strong><span>capacidade operacional</span></div>
+            <div><strong>37 anos</strong><span>experiência e tradição</span></div>
+            <div><strong>sob medida</strong><span>para cada cliente</span></div>
           </div>
         </div>
       </section>
@@ -106,177 +92,180 @@ export default function Home() {
         ))}
       </section>
 
-      <section id="grupo" className="section history">
-        <div className="sectionIntro">
-          <span className="eyebrow">NOSSA HISTÓRIA</span>
-          <h2>Tradição à mesa. Estrutura para crescer junto com o cliente.</h2>
+      <section id="grupo" className="section manifesto">
+        <div className="manifestoTitle">
+          <span className="eyebrow">GRUPO ALPHA</span>
+          <h2>Não servimos apenas refeições. Sustentamos a rotina de quem faz empresas acontecerem.</h2>
         </div>
-
-        <div className="historyBody">
+        <div className="manifestoCopy">
           <p>
-            Há 37 anos, a Alpha nasceu movida pela paixão por oferecer refeições
-            de qualidade e sabor. Cresceu preservando a essência da comida caseira,
-            ao mesmo tempo em que incorporou estrutura, processos, tecnologia e
-            uma equipe técnica preparada para operações corporativas.
+            Há 37 anos, a Alpha combina a essência da comida caseira com estrutura,
+            processos, tecnologia e acompanhamento técnico para atender operações
+            corporativas de diferentes portes.
           </p>
-
-          <div className="historyHighlight">
-            <span>GRUPO ALPHA</span>
+          <div className="signature">
+            <span>ALPHA REFEIÇÕES</span>
             <strong>Experiência que se sente no prato e na operação.</strong>
           </div>
         </div>
       </section>
 
-      <section id="solucoes" className="section solutions">
-        <div className="sectionIntro compact">
-          <span className="eyebrow">SOLUÇÕES</span>
-          <h2>Do café da manhã ao jantar. Da cozinha local à refeição transportada.</h2>
+      <section id="solucoes" className="section solutionsPremium">
+        <div className="sectionHead">
+          <div>
+            <span className="eyebrow">SOLUÇÕES</span>
+            <h2>Um modelo para cada operação.</h2>
+          </div>
+          <p>Do café da manhã ao jantar, da cozinha local à refeição transportada.</p>
         </div>
 
         <div className="solutionGrid">
-          {solucoes.map(([titulo, texto], index) => (
+          {solucoes.map(([n, titulo, texto]) => (
             <article className="solutionCard" key={titulo}>
-              <div className="solutionTop">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <i>↗</i>
-              </div>
+              <div className="solutionNum">{n}</div>
               <h3>{titulo}</h3>
               <p>{texto}</p>
+              <span className="solutionArrow">↗</span>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="qualidade" className="section quality">
-        <div className="qualityVisual">
-          <div className="photoFrame">
-            <span>FOTO REAL DA OPERAÇÃO</span>
-            <strong>Produção • Buffet • Equipe</strong>
-            <small>No próximo pacote entram imagens reais do Grupo Alpha.</small>
-          </div>
+      <section id="qualidade" className="section featureSection">
+        <div className="featureImage tallImage">
+          <Image
+            src="/images/qualidade-alpha.webp"
+            alt="Buffet e pratos preparados pelo Grupo Alpha"
+            fill
+            sizes="(max-width: 900px) 100vw, 48vw"
+          />
+          <div className="imageOverlay" />
+          <span className="imageLabel">OPERAÇÃO REAL • GRUPO ALPHA</span>
         </div>
 
-        <div className="qualityCopy">
+        <div className="featureCopy">
           <span className="eyebrow">QUALIDADE E SEGURANÇA</span>
           <h2>Controle em cada etapa. Cuidado em cada refeição.</h2>
           <p>
             Recebimento, armazenamento, produção, expedição e serviço com
-            acompanhamento técnico e processos padronizados.
+            processos padronizados e acompanhamento técnico.
           </p>
 
-          <div className="pillList">
-            <span>Segurança alimentar</span>
-            <span>Nutricionistas</span>
-            <span>Cardápios personalizados</span>
-            <span>Controle de processos</span>
-            <span>Operação 24x7</span>
+          <div className="featureList">
+            <div><b>01</b><span>Segurança alimentar</span></div>
+            <div><b>02</b><span>Nutricionistas e equipe técnica</span></div>
+            <div><b>03</b><span>Cardápios personalizados</span></div>
+            <div><b>04</b><span>Padronização e controle de processos</span></div>
           </div>
         </div>
       </section>
 
-      <section id="estrutura" className="section structure">
-        <div className="sectionIntro">
-          <span className="eyebrow">NOSSA ESTRUTURA</span>
-          <h2>Uma base sólida para atender operações de diferentes portes.</h2>
+      <section id="estrutura" className="section structurePremium">
+        <div className="sectionHead">
+          <div>
+            <span className="eyebrow">ESTRUTURA</span>
+            <h2>Escala para crescer junto com o cliente.</h2>
+          </div>
+          <p>Central em Barueri, operação contínua e logística preparada para diferentes demandas.</p>
         </div>
 
-        <div className="pillarGrid">
-          {pilares.map(([titulo, texto]) => (
-            <article key={titulo}>
-              <strong>{titulo}</strong>
-              <p>{texto}</p>
-            </article>
-          ))}
+        <div className="structureGallery">
+          <article className="galleryLarge">
+            <Image src="/images/estrutura-alpha.webp" alt="Estrutura de refeitório Grupo Alpha" fill sizes="60vw" />
+            <div className="galleryShade" />
+            <div className="galleryText"><span>ESTRUTURA</span><strong>Ambientes preparados para grandes operações.</strong></div>
+          </article>
+          <article>
+            <Image src="/images/frota-alpha.webp" alt="Frota Grupo Alpha Refeições" fill sizes="40vw" />
+            <div className="galleryShade" />
+            <div className="galleryText"><span>LOGÍSTICA</span><strong>Entrega com identidade e padrão.</strong></div>
+          </article>
+          <article>
+            <Image src="/images/buffet-estacao.webp" alt="Estação de buffet Grupo Alpha" fill sizes="40vw" />
+            <div className="galleryShade" />
+            <div className="galleryText"><span>OPERAÇÃO</span><strong>Apresentação também é experiência.</strong></div>
+          </article>
         </div>
       </section>
 
-      <section className="portal">
-        <div className="portalIcon">
-          <Image src="/logo-alpha.png" alt="" width={120} height={120} />
+      <section className="portalPremium">
+        <div className="portalBrand">
+          <div className="portalLogo">
+            <Image src="/logo-alpha.png" alt="" width={120} height={120} />
+          </div>
+          <span className="eyebrow light">ECOSSISTEMA DIGITAL ALPHA</span>
         </div>
-        <div className="portalCopy">
-          <span className="eyebrow light">ÁREA DO COLABORADOR</span>
-          <h2>O Grupo Alpha também é digital.</h2>
+
+        <div className="portalText">
+          <h2>O cuidado com o colaborador também é digital.</h2>
           <p>
-            Acesse documentos, comunicados, pendências e informações pessoais
-            através do Portal do Colaborador.
+            Documentos, comunicados, informações pessoais e serviços em um
+            ambiente próprio, conectado à experiência Alpha.
           </p>
         </div>
+
         <div className="portalActions">
-          <a className="button buttonWhite" href={site.portalColaborador}>
-            Entrar no Portal
-          </a>
-          <a href={site.primeiroAcesso}>Primeiro acesso</a>
-          <a href={site.recuperarSenha}>Recuperar senha</a>
+          <a className="button buttonWhite" href={site.portalColaborador}>Entrar no Portal</a>
+          <div>
+            <a href={site.primeiroAcesso}>Primeiro acesso</a>
+            <a href={site.recuperarSenha}>Recuperar senha</a>
+          </div>
         </div>
       </section>
 
-      <section className="section experience">
-        <div className="sectionIntro compact">
-          <span className="eyebrow">ALÉM DA REFEIÇÃO</span>
-          <h2>Experiências que tornam o dia a dia mais especial.</h2>
+      <section id="experiencias" className="section experiences">
+        <div className="sectionHead">
+          <div>
+            <span className="eyebrow">ALÉM DA REFEIÇÃO</span>
+            <h2>Momentos que transformam alimentação em experiência.</h2>
+          </div>
         </div>
-        <div className="experienceGrid">
-          <article>
-            <span>01</span>
-            <strong>Datas comemorativas</strong>
-            <p>Quebra de rotina com cardápios e ações especiais.</p>
+
+        <div className="experienceGallery">
+          <article className="experienceMain">
+            <Image src="/images/evento-alpha.webp" alt="Evento corporativo Grupo Alpha" fill sizes="50vw" />
+            <div className="galleryShade" />
+            <div className="galleryText"><span>EVENTOS</span><strong>Datas especiais com uma entrega à altura.</strong></div>
           </article>
           <article>
-            <span>02</span>
-            <strong>Padaria na operação</strong>
-            <p>Pães preparados e assados na hora.</p>
+            <Image src="/images/buffet-alpha.webp" alt="Buffet Grupo Alpha Refeições" fill sizes="25vw" />
+            <div className="galleryShade" />
+            <div className="galleryText"><span>FRESCOR</span><strong>Cor, variedade e apresentação.</strong></div>
           </article>
           <article>
-            <span>03</span>
-            <strong>Eventos internos</strong>
-            <p>Experiências pensadas para equipes e colaboradores.</p>
+            <Image src="/images/churrasco-alpha.webp" alt="Ação especial Grupo Alpha" fill sizes="25vw" />
+            <div className="galleryShade" />
+            <div className="galleryText"><span>EXPERIÊNCIA</span><strong>Ações que quebram a rotina.</strong></div>
           </article>
         </div>
       </section>
 
-      <section id="contato" className="contact">
-        <div className="contactText">
+      <section id="contato" className="contactPremium">
+        <div className="contactCopy">
           <span className="eyebrow light">FALE COM A ALPHA</span>
-          <h2>Vamos desenhar a operação ideal para sua empresa?</h2>
+          <h2>Sua operação merece uma solução sob medida.</h2>
           <p>
-            Conte um pouco sobre a sua necessidade e nossa equipe comercial
-            entra em contato.
+            Conte um pouco sobre sua necessidade e nossa equipe comercial entra em contato.
           </p>
 
-          <div className="contactMeta">
+          <div className="contactInfo">
             <span>{site.telefone}</span>
-            <span>{site.endereco}</span>
-            <a href={site.instagram}>@grupoalpharefeicoes</a>
+            <a href={site.maps} target="_blank" rel="noreferrer">{site.endereco}</a>
+            <a href={site.instagram} target="_blank" rel="noreferrer">@grupoalpharefeicoes</a>
           </div>
         </div>
 
         <form className="formCard">
           <div className="formRow">
-            <label>
-              Nome
-              <input placeholder="Seu nome" />
-            </label>
-            <label>
-              Empresa
-              <input placeholder="Nome da empresa" />
-            </label>
+            <label>Nome<input placeholder="Seu nome" /></label>
+            <label>Empresa<input placeholder="Nome da empresa" /></label>
           </div>
           <div className="formRow">
-            <label>
-              WhatsApp
-              <input placeholder="(11) 99999-9999" />
-            </label>
-            <label>
-              E-mail
-              <input type="email" placeholder="voce@empresa.com.br" />
-            </label>
+            <label>WhatsApp<input placeholder="(11) 99999-9999" /></label>
+            <label>E-mail<input type="email" placeholder="voce@empresa.com.br" /></label>
           </div>
           <div className="formRow">
-            <label>
-              Refeições por dia
-              <input placeholder="Ex.: 350" />
-            </label>
+            <label>Refeições por dia<input placeholder="Ex.: 350" /></label>
             <label>
               Serviço
               <select defaultValue="">
@@ -285,43 +274,39 @@ export default function Home() {
                 <option>Refeição Transportada</option>
                 <option>Marmitex</option>
                 <option>Café da Manhã / Lanches</option>
-                <option>Eventos</option>
+                <option>Eventos Corporativos</option>
                 <option>Ainda não sei</option>
               </select>
             </label>
           </div>
-          <label>
-            Mensagem
-            <textarea placeholder="Conte um pouco sobre sua operação..." />
-          </label>
-
-          <button type="button" className="button buttonRed">
-            Quero receber uma proposta
-          </button>
-          <small>Protótipo visual — envio do formulário será conectado na próxima etapa.</small>
+          <label>Mensagem<textarea placeholder="Conte um pouco sobre sua operação..." /></label>
+          <button type="button" className="button buttonRed">Quero receber uma proposta</button>
+          <small>Protótipo visual — integração do envio entra na próxima etapa.</small>
         </form>
       </section>
 
-      <footer className="footer">
+      <footer className="footerPremium">
         <div className="footerLogo">
-          <Image src="/logo-alpha.png" alt="Grupo Alpha Refeições" width={120} height={120} />
+          <Image src="/logo-alpha.png" alt="Grupo Alpha Refeições" width={132} height={132} />
         </div>
-        <div className="footerLinks">
-          <strong>Institucional</strong>
-          <a href="#grupo">Grupo Alpha</a>
+        <div className="footerCol">
+          <strong>Grupo Alpha</strong>
+          <a href="#grupo">Quem somos</a>
           <a href="#solucoes">Soluções</a>
           <a href="#qualidade">Qualidade</a>
-          <a href="#contato">Contato</a>
+          <a href="#estrutura">Estrutura</a>
         </div>
-        <div className="footerLinks">
+        <div className="footerCol">
           <strong>Colaboradores</strong>
           <a href={site.portalColaborador}>Portal do Colaborador</a>
           <a href={site.primeiroAcesso}>Primeiro acesso</a>
           <a href={site.recuperarSenha}>Recuperar senha</a>
         </div>
-        <div className="footerRight">
+        <div className="footerCol footerContact">
+          <strong>Matriz</strong>
+          <a href={site.maps} target="_blank" rel="noreferrer">{site.endereco}</a>
+          <a href={site.instagram} target="_blank" rel="noreferrer">Instagram</a>
           <span>© 2026 Grupo Alpha Refeições</span>
-          <a href={site.instagram}>Instagram</a>
         </div>
       </footer>
     </main>

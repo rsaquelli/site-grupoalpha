@@ -1,42 +1,30 @@
-# Pacote 1.1 — Site Grupo Alpha Refeições
+# Pacote 2 — Home Premium Grupo Alpha Refeições
 
-Esta versão substitui o primeiro protótipo e mantém a identidade visual já usada no Alpha RH Digital.
+Redesign completo da Home com foco em marca, marketing e experiência.
 
-## Identidade aplicada
+## Principais mudanças
+- Hero com fotografia real da operação
+- Nova hierarquia visual e narrativa comercial
+- Seções de soluções, qualidade, estrutura e experiências redesenhadas
+- Galeria com fotos reais selecionadas do Instagram
+- Portal do Colaborador tratado como diferencial digital
+- Endereço da matriz corrigido para R. Angelin, 326 - Jardim Santa Cecília, Barueri - SP, 06465-050
+- Link direto para Google Maps
+- Layout responsivo e refinado
+- Imagens convertidas para WebP para reduzir peso
 
-- Logo oficial do Grupo Alpha em `public/logo-alpha.png`
-- Vermelho principal: `#b5121b`
-- Vermelho de destaque: `#c71924`
-- Gradiente institucional: `#b5121b` → `#df1f2d`
-- Dourado/laranja de apoio: `#d78916`
-- Cinza escuro institucional: `#3f3f3f`
-- Fundo claro: `#f7f7f7`
-- Branco predominante
-
-## Portal do Colaborador
-
-Os links estão em:
-
-`src/lib/site.ts`
-
-## Rodar localmente
+## Instalação
+Substitua os arquivos do projeto pelo conteúdo deste pacote e rode:
 
 ```powershell
 npm install
 npm run dev
 ```
 
-Abra:
+Antes de subir:
+```powershell
+npm run build
+```
 
-http://localhost:3000
-
-## Próxima etapa sugerida
-
-Substituir os placeholders por fotos reais da operação e ajustar os textos finais/cases.
-
-
-## Pacote 1.2
-
-- Logo do topo ampliado para 112x112 px no desktop.
-- Header ajustado para manter proporção e alinhamento.
-- No mobile, logo com 82x82 px e header de 92 px.
+## Observação
+O formulário ainda é visual. A integração de envio, WhatsApp, analytics e automações comerciais pode entrar no próximo pacote.
